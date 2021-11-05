@@ -36,7 +36,9 @@ class MassConverterTest {
 
         Units input1 = new Units(10, "g");
         Units input2 = new Units(1, "kg");
-        Units actualUnits = new Units(input1.getValue()+MassConverter.kilogramToGram(input2).getValue(), "g");
+
+        double actualValue = input1.getValue()+MassConverter.kilogramToGram(input2).getValue();
+        Units actualUnits = new Units(actualValue, "g");
 
         Units expectedUnits = new Units(1010, "g");
         assertEquals(expectedUnits.getValue(), actualUnits.getValue());
